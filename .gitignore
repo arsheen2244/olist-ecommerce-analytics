@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+
+# raw data and the database are large and licensed by Kaggle: do not commit them
+data/raw/
+data/olist.db

@@ -1,0 +1,5 @@
+payment_type,orders,payment_value,value_share_pct,avg_installments,avg_payment
+credit_card,75618,12350042.56,78.47,3.51,162.7
+boleto,19539,2826802.3,17.96,1.0,144.67
+voucher,3745,349874.4,2.22,1.0,62.33
+debit_card,1515,212417.75,1.35,1.0,140.12

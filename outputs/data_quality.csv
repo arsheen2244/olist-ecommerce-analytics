@@ -1,0 +1,9 @@
+check,rows_affected,out_of,how_handled,pct
+Duplicate order_id rows in orders,0,99441,None expected; would be de-duplicated,0.0
+Orders with no line items,775,99441,Excluded from revenue metrics (n_items > 0),0.78
+Orders cancelled or unavailable,1234,99441,"Excluded from revenue, retention and RFM",1.24
+Delivered orders missing a delivery date,8,96478,Excluded from delivery metrics,0.01
+Delivered before the purchase timestamp,0,96478,Flagged; investigate if non-zero,0.0
+Orders with more than one review,547,99441,Latest review kept (ROW_NUMBER over answer timestamp),0.55
+Products with no category,610,32951,Labelled 'unknown' in item_facts,1.85
+Categories missing an English translation,2,73,Falls back to the Portuguese name,2.74

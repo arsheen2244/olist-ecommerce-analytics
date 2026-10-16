@@ -1,0 +1,7 @@
+segment,customers,pct_customers,revenue,pct_revenue,avg_spend,avg_recency_days,avg_orders
+Lapsed big spenders,21034,22.1,5652008.09,41.9,268.71,386.0,1.0
+Recent big spenders,14765,15.5,3956797.28,29.3,267.98,141.0,1.0
+Lapsed low-value,34312,36.1,1911022.57,14.2,55.7,387.0,1.0
+New customers,21985,23.1,1224104.37,9.1,55.68,138.0,1.0
+"Repeat, cooling off",1645,1.7,415673.66,3.1,252.69,370.0,2.08
+Champions (repeat + recent),1242,1.3,334794.77,2.5,269.56,138.0,2.16
