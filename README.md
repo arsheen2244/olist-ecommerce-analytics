@@ -1,5 +1,5 @@
 # Olist E-commerce Analytics: delivery, customers and sellers
-**Live dashboard:** [olist-ecommerce-analytics.streamlit.app](https://olist-ecommerce-analytics-dajdftqwpc6crghj22dfcl.streamlit.app/)**
+
 An end-to-end data analyst project on the Brazilian Olist marketplace (about 100k orders, 2016-2018). It answers one business question: **where is the marketplace losing customers and money, and what should be fixed first?**
 
 ## Key findings (real Olist data, 98,199 valid orders, R$13.5M GMV)
@@ -13,7 +13,7 @@ An end-to-end data analyst project on the Brazilian Olist marketplace (about 100
 
 Full results and sized recommendations: `outputs/findings.md`.
 
-**Live dashboard:** _add your Streamlit link here_
+**Live dashboard:**  [olist-ecommerce-analytics.streamlit.app](https://olist-ecommerce-analytics-dajdftqwpc6crghj22dfcl.streamlit.app/)**
 
 ## Dashboard preview
 
