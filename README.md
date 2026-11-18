@@ -1,4 +1,24 @@
-# Olist E-commerce Analytics: delivery, customers and sellers
+<div align="center">
+
+# 🛒 Olist E‑commerce Analytics
+
+**Delivery, customers and sellers: where a marketplace loses customers and money, and what to fix first.**
+
+[![Live dashboard](https://img.shields.io/badge/Live%20dashboard-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://olist-ecommerce-analytics-dajdftqwpc6crghj22dfcl.streamlit.app/)
+![SQL](https://img.shields.io/badge/SQL-SQLite-003B57?logo=sqlite&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)
+![pandas](https://img.shields.io/badge/pandas-150458?logo=pandas&logoColor=white)
+![Plotly](https://img.shields.io/badge/Plotly-3F4F75?logo=plotly&logoColor=white)
+![Orders](https://img.shields.io/badge/orders-98%2C199-2ea44f)
+![GMV](https://img.shields.io/badge/GMV-R%2413.5M-0969da)
+
+</div>
+
+---
+
+| 📦 Valid orders | 💰 GMV | ⏰ Late rate | ⭐ Late vs on‑time review | 🔁 Repeat customers |
+|:---:|:---:|:---:|:---:|:---:|
+| **98,199** | **R$13.5M** | **6.8%** | **2.27 vs 4.29** | **3.0%** |
 
 An end-to-end data analyst project on the Brazilian Olist marketplace (about 100k orders, 2016-2018). It answers one business question: **where is the marketplace losing customers and money, and what should be fixed first?**
 
@@ -13,7 +33,43 @@ An end-to-end data analyst project on the Brazilian Olist marketplace (about 100
 
 Full results and sized recommendations: `outputs/findings.md`.
 
-**Live dashboard:**  [olist-ecommerce-analytics.streamlit.app](https://olist-ecommerce-analytics-dajdftqwpc6crghj22dfcl.streamlit.app/)**
+**🔗 Live dashboard:** [olist-ecommerce-analytics.streamlit.app](https://olist-ecommerce-analytics-dajdftqwpc6crghj22dfcl.streamlit.app/)
+
+## 🏗️ How it works
+
+```mermaid
+flowchart LR
+    K[(Kaggle: 9 Olist CSVs<br/>~100K orders, 2016–2018)] --> L["src/load_db.py<br/>CSV → SQLite<br/>+ 8 data‑quality checks"]
+    L --> DB[(SQLite)]
+    DB --> V["sql/00_views.sql<br/>order_facts · item_facts"]
+    V --> Q["sql/queries/<br/>12 business questions"]
+    Q --> R["src/run_analysis.py<br/>pandas + matplotlib"]
+    R --> O[["outputs/<br/>CSVs · figures · findings.md"]]
+    O --> D["dashboard/app.py<br/>Streamlit + Plotly"]
+    D --> U([📊 Live dashboard])
+```
+
+The dashboard reads **only** `outputs/`, so it deploys without the raw data or the database.
+
+```mermaid
+flowchart TB
+    Q{{"Where is the marketplace losing<br/>customers and money?"}}
+    Q --> A["🚚 Delivery<br/>late rate by state,<br/>freight burden"]
+    Q --> B["⭐ Experience<br/>late delivery → reviews"]
+    Q --> C["🔁 Customers<br/>cohorts · RFM · repeat rate"]
+    Q --> D["🏪 Sellers & categories<br/>Pareto · seller risk scorecard"]
+    A & B & C & D --> F["📄 Sized recommendations<br/>outputs/findings.md"]
+```
+
+## 🧰 Tech stack
+
+| Layer | Tools |
+|------|-------|
+| Storage & querying | SQLite, SQL (window functions: `LAG`, `SUM() OVER`, `NTILE`; CTEs; views) |
+| Analysis | Python, pandas, NumPy (confidence intervals) |
+| Charts | matplotlib (static figures), Plotly (interactive) |
+| Dashboard | Streamlit (5 tabs, sidebar filters), deployed on Streamlit Community Cloud |
+| Data | [Olist Brazilian E‑Commerce dataset](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) (Kaggle) |
 
 ## Dashboard preview
 
